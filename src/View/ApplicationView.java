@@ -32,7 +32,7 @@ public class ApplicationView extends JFrame implements View{
         
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        this.setSize(200,
+        this.setSize(300,
                 150);
         this.setResizable(false);
         this.setLocationRelativeTo(null);

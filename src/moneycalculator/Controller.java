@@ -36,8 +36,10 @@ public class Controller {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(!amount.getText().isEmpty()&&from.getSelectedItem()!=to.getSelectedItem()){
                 m.exchange(new Money(Double.parseDouble(amount.getText()),(Currency) from.getSelectedItem()),
                         (Currency) to.getSelectedItem());
+                }
             }
         };
     }

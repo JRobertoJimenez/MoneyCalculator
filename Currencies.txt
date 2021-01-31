@@ -1,0 +1,10 @@
+EUR,Euro,€
+USD,Dolar americano,$
+GBP,Libra esterlina,£
+JPY,Yen japonés,¥
+AUD,Dolar australiano,A$
+CAD,Dolar canadiense,C$
+CHF,Franco suizo,CHF
+CNY,Renminbi,元
+HKD, Dolar Hong Kong,HK$
+NZD,Dolar Nueva Zelanda,NZ$

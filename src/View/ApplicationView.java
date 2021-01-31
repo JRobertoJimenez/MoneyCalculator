@@ -8,12 +8,12 @@ package View;
 import Model.Money;
 import java.awt.BorderLayout;
 import java.awt.HeadlessException;
-import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import moneycalculator.ApplicationController;
 import moneycalculator.Controller;
 
 /**
@@ -22,10 +22,10 @@ import moneycalculator.Controller;
  */
 public class ApplicationView extends JFrame implements View{
     
-    private final Controller con;
+    private final ApplicationController con;
     private final JLabel text;
 
-    public ApplicationView(Controller con) throws HeadlessException {
+    public ApplicationView(ApplicationController con) throws HeadlessException {
         this.setTitle("MoneyCalculator");
         this.con=con;
         text=new JLabel();
@@ -45,8 +45,8 @@ public class ApplicationView extends JFrame implements View{
 
     private JPanel dialogFrom() {
         JPanel panel=new JPanel();
-        panel.add(con.comboFrom(),BorderLayout.WEST);
-        JTextArea t=con.textAmount();
+        panel.add(con.from(),BorderLayout.WEST);
+        JTextArea t=con.amount();
         panel.add(t,BorderLayout.EAST);
         panel.setSize(this.getWidth(), this.getHeight()/3);
         
@@ -56,7 +56,7 @@ public class ApplicationView extends JFrame implements View{
 
     private JPanel dialogTo() {
         JPanel panel=new JPanel();
-        panel.add(con.comboTo(),BorderLayout.WEST);
+        panel.add(con.to(),BorderLayout.WEST);
         panel.add(createButton(), BorderLayout.EAST);
         panel.setSize(this.getWidth(), this.getHeight()/3);
         return panel;
@@ -72,7 +72,7 @@ public class ApplicationView extends JFrame implements View{
     private JButton createButton() {
         JButton b=new JButton();
         b.setText("Calcular");
-        b.addActionListener(con.buttonCalcular());
+        b.addActionListener(con.calcular());
         return b;
     }
     

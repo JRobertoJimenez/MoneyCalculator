@@ -27,7 +27,7 @@ public class MoneyCalculator {
            + "&base=@&symbols=@";
    
     public static void main(String[] args) {
-        Controller c= new Controller(new Model(new CurrenciesCSVLoader(new File(fileNameCurrencies)),
+        ApplicationController c= new ApplicationController(new Model(new CurrenciesCSVLoader(new File(fileNameCurrencies)),
             new ExchangeRateWebLoader(urlRates)));
         
         c.getModel().addView(new ApplicationView(c));
